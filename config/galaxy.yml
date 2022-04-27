@@ -452,7 +452,7 @@ galaxy:
 
   # Set to true to instruct Galaxy to look for and install missing tool
   # dependencies before each job runs.
-  #conda_auto_install: false
+  conda_auto_install: true
 
   # Set to true to instruct Galaxy to install Conda from the web
   # automatically if it cannot find a local copy and conda_exec is not
@@ -509,7 +509,7 @@ galaxy:
   # not exist).
   # The value of this option will be resolved with respect to
   # <config_dir>.
-  #tool_sheds_config_file: tool_sheds_conf.xml
+  tool_sheds_config_file: tool_sheds_conf.xml
 
   # This option controls whether legacy datatypes are loaded from
   # installed tool shed repositories. We're are in the process of
@@ -1093,7 +1093,7 @@ galaxy:
   #message_box_class: info
 
   # Append "{brand}" text to the masthead.
-  #brand: null
+  brand: 27apr
 
   # Display the "Galaxy" text in the masthead.
   #display_galaxy_brand: true
@@ -1577,7 +1577,7 @@ galaxy:
   # non-admin user's Galaxy login ( email ).  The non-admin user is
   # restricted to uploading files or sub-directories of files contained
   # in their directory.
-  #user_library_import_dir: null
+  user_library_import_dir: /lustre/fs5/vgl/scratch/labueg/galaxy_22.01/upload_dir
 
   # If user_library_import_dir is set, this option will auto create a
   # library import directory for every user (based on their email) upon
@@ -1742,7 +1742,7 @@ galaxy:
   # Admin section of the server, and will have access to create users,
   # groups, roles, libraries, and more.  For more information, see:
   # https://galaxyproject.org/admin/
-  #admin_users: null
+  admin_users: admin@admin.org
 
   # Force everyone to log in (disable anonymous access).
   #require_login: false
@@ -2470,7 +2470,7 @@ galaxy:
   # Path to dynamic tool destinations configuration file.
   # The value of this option will be resolved with respect to
   # <config_dir>.
-  #tool_destinations_config_file: tool_destinations.yml
+  tool_destinations_config_file: tool_destinations.yml
 
   # Location of New User Welcome data, a single directory containing the
   # images and JSON of Topics/Subtopics/Slides as export. This location
