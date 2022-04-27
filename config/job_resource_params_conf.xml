@@ -1,0 +1,6 @@
+<parameters>
+  <param label="Partition" name="partition" type="select" help="Partition to send job to. Either vgl or vgl_bigmem. Leave blank to use default (vgl).">
+    <option value="vgl">vgl (default)</option>
+    <option value="vgl_bigmem">vgl_bigmem</option>
+  </param>
+</parameters>

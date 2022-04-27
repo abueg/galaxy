@@ -47,7 +47,7 @@ gravity:
   gunicorn:
 
     # The socket to bind. A string of the form: ``HOST``, ``HOST:PORT``, ``unix:PATH``, ``fd://FD``. An IP is a valid HOST.
-    bind: localhost:8090
+     bind: localhost:8090
 
     # Controls the number of Galaxy application processes Gunicorn will spawn.
     # Increased web performance can be attained by increasing this value.
@@ -421,7 +421,7 @@ galaxy:
   # will fail.
   # The value of this option will be resolved with respect to
   # <data_dir>.
-  #tool_dependency_dir: dependencies
+  tool_dependency_dir: dependencies
 
   # Specifies the path to the standalone dependency resolvers
   # configuration file. This configuration can now be specified directly
@@ -438,7 +438,7 @@ galaxy:
 
   # Override the Conda executable to use, it will default to the one on
   # the PATH (if available) and then to <conda_prefix>/bin/conda
-  #conda_exec: null
+  #conda_exec: /lustre/fs5/vgl/scratch/labueg/galaxy_22.01/galaxy/database/_dependencies/conda/condabin
 
   # Pass debug flag to conda commands.
   #conda_debug: false
@@ -559,7 +559,7 @@ galaxy:
   # https://github.com/mulled. Container availability will vary by tool,
   # this option will only be used for job destinations with Docker or
   # Singularity enabled.
-  #enable_mulled_containers: true
+  enable_mulled_containers: true
 
   # Container resolvers configuration. Set up a file describing
   # container resolvers to use when discovering containers for Galaxy.
@@ -847,10 +847,6 @@ galaxy:
   # <cache_dir>.
   #mulled_resolution_cache_lock_dir: mulled/locks
 
-  # Seconds until the beaker cache is considered old and a new value is
-  # created.
-  #mulled_resolution_cache_expire: 3600
-
   # Configuration file for the object store If this is set and exists,
   # it overrides any other objectstore settings.
   # The value of this option will be resolved with respect to
@@ -1093,7 +1089,7 @@ galaxy:
   #message_box_class: info
 
   # Append "{brand}" text to the masthead.
-  brand: 27apr
+  brand: 22dot01
 
   # Display the "Galaxy" text in the masthead.
   #display_galaxy_brand: true

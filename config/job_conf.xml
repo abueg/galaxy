@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!-- A sample job config that explicitly configures job running the way it is
+     configured by default (if there is no explicit config). -->
+<job_conf>
+    <plugins>
+        <plugin id="local" type="runner" load="galaxy.jobs.runners.local:LocalJobRunner" workers="4"/>
+        <plugin id="slurm" type="runner" load="galaxy.jobs.runners.slurm:SlurmJobRunner">
+            <param id="drmaa_library_path">/vggpfs/fs3/vgl/store/labueg/programs/slurm-drmaa/slurm-drmaa-1.1.3/lib/libdrmaa.so</param>
+        </plugin>
+    </plugins>
+    <destinations default="slurm-vgl">
+        <destination id="local" runner="local"/>
+        <destination id="slurm-vgl" runner="slurm">
+            <param id="nativeSpecification">--nodes=1 --ntasks=1 --cpus-per-task=32 --partition=vgl</param>
+        </destination>
+        <destination id="slurm-bigmem" runner="slurm">
+            <param id="nativeSpecification">--nodes=1 --ntasks=1 --cpus-per-task=64 --partition=vgl_bigmem</param>
+        </destination>
+    </destinations>
+    <tools>
+        <tool id="bwa_mem" destination="slurm-bigmem" resources="partition"/>
+    </tools>
+</job_conf>
