@@ -17,7 +17,7 @@
             <param id="nativeSpecification">--nodes=1 --ntasks=1 --cpus-per-task=64 --partition=vgl_bigmem</param>
         </destination>
     </destinations>
-    <tools>
+<!--    <tools>
         <tool id="bwa_mem" destination="slurm-bigmem" resources="partition"/>
-    </tools>
+    </tools> -->
 </job_conf>

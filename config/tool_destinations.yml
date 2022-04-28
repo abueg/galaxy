@@ -165,10 +165,9 @@
 # Galaxy's history panel).
 
 tools:
-  meryl: {cores: 32, mem: 400}
+  meryl: {cores: 16, mem: 200}
   hifiasm: {cores: 32, mem: 400}
   bwa: {cores: 32}
-  bwa_mem: {cores: 64}
 
 default_destination:
   priority:
