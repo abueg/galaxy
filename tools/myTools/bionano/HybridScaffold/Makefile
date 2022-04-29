@@ -1,0 +1,21 @@
+VERSION := 3.0
+BRANCH := $(shell basename $(PWD))
+SVNREV := $(shell svn info | grep Revision | sed 's/Revision: //')
+DATE := $(shell date)
+
+DEFAULT := install
+
+default: $(DEFAULT)
+
+INSTALLROOT := /rugpfs/fs0/vgl/store/vglshare/tools/VGP-tools/bionano/Solve3.6.1_11162020/HybridScaffold
+INSTALLDIR := $(INSTALLROOT)/$(BRANCH).$(SVNREV)
+INSTALLFILES := hybridScaffold.pl
+
+install:
+	mkdir -p $(INSTALLDIR)
+	cp -p $(INSTALLFILES) $(INSTALLDIR)/.
+	
+prod: install
+	cd $(INSTALLROOT) ; /bin/rm -f $(VERSION) ; ln -s $(BRANCH).$(SVNREV) $(VERSION)
+
+

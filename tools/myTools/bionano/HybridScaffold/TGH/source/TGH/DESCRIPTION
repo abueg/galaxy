@@ -1,0 +1,11 @@
+Package: TGH
+Type: Package
+Title: Third Generation HybridScaffold
+Version: 0.1
+Date: 2016-10-06
+Author: Jian Wang <jwang@bionanogenomics.com>
+Maintainer: support@bionano <yourfault@somewhere.net>
+Description: This package is a pipeline for scaffolding two single-enzyme BNG genome maps with NGS sequences to produce a high-quality genome assembly.
+Depends: data.table,igraph,intervals,MASS,parallel,XML,argparser
+License: Proprietary
+LazyData: TRUE
