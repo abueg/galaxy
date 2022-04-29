@@ -10,14 +10,27 @@
     </plugins>
     <destinations default="slurm-vgl">
         <destination id="local" runner="local"/>
-        <destination id="slurm-vgl" runner="slurm">
+        <destination id="vgl-all" runner="slurm">
             <param id="nativeSpecification">--nodes=1 --ntasks=1 --cpus-per-task=32 --partition=vgl</param>
         </destination>
-        <destination id="slurm-bigmem" runner="slurm">
+        <destination id="vgl-half" runner="slurm">
+            <param id="nativeSpecification">--nodes=1 --ntasks=1 --cpus-per-task=16 --partition=vgl</param>
+        </destination>
+        <destination id="bigmem-all" runner="slurm">
             <param id="nativeSpecification">--nodes=1 --ntasks=1 --cpus-per-task=64 --partition=vgl_bigmem</param>
         </destination>
+        <destination id="bigmem-half" runner="slurm">
+            <param id="nativeSpecification">--nodes=1 --ntasks=1 --cpus-per-task=32 --partition=vgl_bigmem</param>
+        </destination>
+        <destination id="dynamic_partition_cores" runner="dynamic">
+            <param id="type">python</param>
+            <param id="function">dynamic_partition_cores</param>
+        </destination>
     </destinations>
-<!--    <tools>
-        <tool id="bwa_mem" destination="slurm-bigmem" resources="partition"/>
-    </tools> -->
+    <resources>
+        <group id="testing">partition,cores</group>
+    </resources>
+    <tools>
+        <tool id="meryl" destination="dynamic_partition_cores" resources="testing" />
+    </tools>
 </job_conf>

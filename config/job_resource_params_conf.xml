@@ -3,4 +3,5 @@
     <option value="vgl">vgl (default)</option>
     <option value="vgl_bigmem">vgl_bigmem</option>
   </param>
+  <param label="Cores" name="cores" type="integer" min="1" max="64" value="" help="Number of processing cores, 'ppn' value (1-64). Leave blank to use default value." />
 </parameters>
